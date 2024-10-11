@@ -5,7 +5,6 @@ description = "Add your description here"
 readme = "README.md"
 requires-python = ">=3.10"
 dependencies = [
-    "logging>=0.4.9.6",
     "myprojectuv",
     "requests>=2.32.3",
 ]
