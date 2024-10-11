@@ -23,8 +23,8 @@ jobs:
     - name: Set up Python ${{ matrix.python-version }}
       run: uv python install ${{ matrix.python-version }}
 
-    - name: Install the project
-      run: uv sync --all-extras --dev
+#    - name: Install the project
+#      run: uv sync --all-extras --dev
 
 
 #    - uses: actions/checkout@v2
@@ -36,9 +36,17 @@ jobs:
 #      run: |
 #        python -m pip install --upgrade pip
 #        pip install tox tox-gh-actions
+    - name: Install dependencies
+      run: |
+        python -m pip install --upgrade pip
+        pip install tox  # Install tox
 
-    - name: Run tests
-      run: uv run pytest tests
+    - name: Install project dependencies
+      run: uv sync --all-extras --dev  # Use uv to install dependencies
+
 
     - name: Test with tox
-      run: uv run tox
+      run: tox
+#
+#    - name: Run tests
+#      run: uv run pytest tests
