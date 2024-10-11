@@ -40,5 +40,5 @@ jobs:
     - name: Run tests
       run: uv run pytest tests
 
-#    - name: Test with tox
-#      run: uv run tox
+    - name: Test with tox
+      run: uv run tox
