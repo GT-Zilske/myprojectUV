@@ -26,6 +26,10 @@ jobs:
     - name: Install the project
       run: uv sync --all-extras --dev
 
+    - name: Install required build dependencies
+      run: |
+        python -m pip install --upgrade pip setuptools wheel
+        
 
 #    - uses: actions/checkout@v2
 #    - name: Set up Python ${{ matrix.python-version }}
